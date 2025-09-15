@@ -34,19 +34,20 @@ const Label = styled.label`
   margin-bottom: 0.25rem;
 `;
 
-const StyledInput = styled.input<{ 
-  $fullWidth?: boolean; 
+const StyledInput = styled.input<{
+  $fullWidth?: boolean;
   $size?: 'small' | 'medium' | 'large';
   $error?: string;
 }>`
-  border: 1px solid #d2d0ce;
-  border-radius: 0.25rem;
-  background-color: white;
-  color: #323130;
-  transition: all 0.2s ease-in-out;
-  
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1 0 0;
+  border-radius: 8px;
+  border: 1px solid var(--Grey-300, #dadadf);
+
   ${props => props.$fullWidth && 'width: 100%;'}
-  
+
   /* Size variants */
   ${props => {
     switch (props.$size) {
@@ -76,19 +77,21 @@ const StyledInput = styled.input<{
     border-color: #0078d4;
     box-shadow: 0 0 0 1px #0078d4;
   }
-  
+
   &:disabled {
     background-color: #f3f2f1;
     border-color: #e1dfdd;
     color: #a19f9d;
     cursor: not-allowed;
   }
-  
+
   &::placeholder {
     color: #a19f9d;
   }
-  
-  ${props => props.$error && `
+
+  ${props =>
+    props.$error &&
+    `
     border-color: #d13438;
     
     &:focus {
@@ -149,4 +152,4 @@ export const Input: React.FC<InputProps> = ({
       {error && <ErrorMessage>{error}</ErrorMessage>}
     </InputContainer>
   );
-}; 
+};

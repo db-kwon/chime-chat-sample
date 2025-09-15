@@ -29,7 +29,7 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
         bottom: '90px',
         right: '20px',
         width: '350px',
-        height: '500px',
+        height: '700px',
         backgroundColor: 'white',
         border: '1px solid #ddd',
         borderRadius: '8px',
@@ -43,18 +43,12 @@ export const ChatPanel: React.FC<ChatPanelProps> = ({
       <div
         style={{
           flex: 1,
-          height: '100%',
-          padding: '15px',
+          height: '70%',
           display: 'flex',
           flexDirection: 'column',
-          backgroundColor: 'yellow',
         }}
       >
-        <InfiniteList
-          items={[<ChatMessages messages={messages} />]}
-          onLoad={() => {}}
-          isLoading={false}
-        />
+        <ChatMessages messages={messages} />
         <ChatInputForm
           inputValue={inputValue}
           onInputChange={onInputChange}
