@@ -85,6 +85,7 @@ export const ChatMessages: React.FC<ChatMessagesProps> = ({ messages }) => {
     <div
       style={{
         overflowY: 'auto',
+        paddingBottom: '80px', // ChatInputForm 높이만큼 하단 패딩 추가
       }}
     >
       {messages.length === 0 ? (
@@ -114,6 +115,7 @@ const StyledChatBubbleContainer = styled(ChatBubbleContainer)<{
   flex-direction: column;
   justify-content: center;
   margin: 0;
+  background-color: #f0f1f2;
   align-items: ${props => (props.$isUser ? 'flex-end' : 'flex-start')};
   align-self: ${props => (props.$isUser ? 'flex-end' : 'flex-start')};
 `;

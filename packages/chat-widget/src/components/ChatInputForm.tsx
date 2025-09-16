@@ -13,12 +13,27 @@ export const ChatInputForm: React.FC<ChatInputFormProps> = ({
   onSubmit,
 }) => {
   return (
-    <form onSubmit={onSubmit}>
-      <div style={{ display: 'flex', gap: '10px' }}>
+    <form
+      onSubmit={onSubmit}
+      style={{
+        position: 'absolute',
+        bottom: 0,
+        left: 0,
+        right: 0,
+        display: 'flex',
+        gap: '10px',
+        padding: '16px',
+        backgroundColor: 'white',
+        borderTop: '1px solid #E5E5E5',
+        zIndex: 1000,
+      }}
+    >
+      <div style={{ display: 'flex', gap: '10px', width: '100%' }}>
         <ChatInput
           value={inputValue}
           onChange={onInputChange}
           placeholder="내용을 입력해 주세요"
+          fullWidth
         />
         <button
           type="submit"
